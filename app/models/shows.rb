@@ -22,4 +22,11 @@ class Show < ActiveRecord::Base
     api_response = Net::HTTP.get(uri)
     JSON.parse(api_response)
   end
+
+  def self.order_shows(response)
+    response["results"].collect do |show|
+      show_url = show["backdrop_path"]["name"]["overview"]
+      Show.new(show_url)
+    end
+  end
 end
