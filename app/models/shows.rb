@@ -24,12 +24,9 @@ class Show < ActiveRecord::Base
   end
 
   def self.order_shows(response)
-   show_data = response["results"].collect do |show|
+   response["results"].collect do |show|
       show_url = show["name"]["overview"]
-    end
-
-    show_data.collect do |data|
-      Show.new(data)
+      Show.new(show_url)
     end
   end
 end
