@@ -1,7 +1,8 @@
 <h3>Here are the results of your search: </h3>
 <% @shows.collect do |show| %>
 <ol>
-  <li><input type="checkbox" name="save"><%=show.show_url%></li>
+  <li><input type="checkbox" name="checkbox" value = "item"><%=show.show_url%></li>
 </ol>
   <% end %>
-<a href = "/new_list" class = "btn">Save to List</a>
+<a href = "/new_list" class = "btn">Add to New List</a>
+<a href = "/existing_list" class = "btn">Add to Existing List</a>

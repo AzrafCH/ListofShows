@@ -7,4 +7,10 @@ class ShowsController < ApplicationController
     erb :index
   end
 
+  get '/show/:id' do
+    sesssion[:id] = params["id"]
+    @show = Show.show_id(id)
+    erb :show_page
+  end
+
 end

@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
   belongs_to :user
   belongs_to :list
 
-  attr_accessor :show_url
+  attr_accessor :show_url, :show_id
 
   def initialize(url)
     self.show_url = url
@@ -17,7 +17,7 @@ class Show < ActiveRecord::Base
     url = "https://api.themoviedb.org/3/search/tv?api_key=5473abb95c13b13aa72928a042ee4e02&language=en-US&query=#{name}"
     response = self.get_api_response(url)
     response["results"].collect do |show|
-      show_url = show["name"], show["overview"]
+      show_url = " " + show["name"] + " " + "|" + " " + show["overview"]
       Show.new(show_url)
     end
   end
