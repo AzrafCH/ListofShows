@@ -14,9 +14,8 @@
 ActiveRecord::Schema.define(version: 20200201112657) do
 
   create_table "list", force: :cascade do |t|
-    t.string  "title"
-    t.string  "content"
-    t.integer "user_id"
+    t.string "title"
+    t.string "content"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 20200201112657) do
   create_table "user", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "password"
   end
 
 end

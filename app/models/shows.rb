@@ -1,5 +1,6 @@
 require 'json'
 require 'net/http'
+require 'pry'
 
 class Show < ActiveRecord::Base
   belongs_to :user
