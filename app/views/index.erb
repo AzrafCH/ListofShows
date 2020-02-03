@@ -1,6 +1,6 @@
 <h3>Here are the results of your search: </h3>
 <% @shows.collect do |show| %>
-<ul>
-  <li><h3><%=show.show_url%></h3></li>
-</ul>
+<ol>
+  <li><input type="checkbox" name="save"><%=show.show_url%></li>
+</ol>
   <% end %>

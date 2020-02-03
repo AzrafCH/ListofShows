@@ -17,7 +17,7 @@ class Show < ActiveRecord::Base
     url = "https://api.themoviedb.org/3/search/tv?api_key=5473abb95c13b13aa72928a042ee4e02&language=en-US&query=#{name}"
     response = self.get_api_response(url)
     response["results"].collect do |show|
-      show_url = show["name"]
+      show_url = show["name"], show["overview"]
       Show.new(show_url)
     end
   end
@@ -28,10 +28,4 @@ class Show < ActiveRecord::Base
     JSON.parse(api_response)
   end
 
-#  def self.order_shows(response)
-#   response["page"].collect do |show|
-#      show_url = show["name"]["overview"]
-#      Show.new(show_url)
-#    end
-#  end
 end
