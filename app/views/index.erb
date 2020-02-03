@@ -1,6 +1,6 @@
 <h3>Here are the results of your search: </h3>
-<% @shows_parsed.collect do |show| %>
+<% @shows.collect do |show| %>
 <ul>
-  <li><h3><%=show%></h3></li>
+  <li><h3><%=show.show_url%></h3></li>
 </ul>
   <% end %>
