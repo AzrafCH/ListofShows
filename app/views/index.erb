@@ -1,8 +1,13 @@
 <h3>Here are the results of your search: </h3>
 <% @shows.collect do |show| %>
 <ol>
-  <li><input type="checkbox" name="checkbox" value = "item"><%=show.show_url%></li>
+  <li><input type="checkbox" name="list[show_ids][]" id = "show[:id]" value = "show[:id]"><%=show.show_url%></li>
 </ol>
   <% end %>
-<a href = "/new_list" class = "btn">Add to New List</a>
-<a href = "/existing_list" class = "btn">Add to Existing List</a>
+  <br>
+
+  <h2>Create New List</h2>
+  <form action = "/list" method = "POST">
+    <input type = "text" name = "list[name]" placeholder="List Name"><br>
+    <input type = "submit">
+  </form>

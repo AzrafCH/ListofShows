@@ -1,8 +1,13 @@
 class ListsController < ApplicationController
 
-  get '/new_list' do
+  get '/lists' do
+    @list = List.all
+    erb :lists_index
+  end
 
-    erb :new_list
+  get '/new_list' do
+    @show = Show.all
+    erb :lists_new
   end
 
 end
