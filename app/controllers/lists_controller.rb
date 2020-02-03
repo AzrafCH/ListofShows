@@ -5,9 +5,9 @@ class ListsController < ApplicationController
     erb :lists_index
   end
 
-  get '/new_list' do
-    @show = Show.all
-    erb :lists_new
+  post '/new_list' do
+
+    erb :new_list
   end
 
 end
