@@ -5,6 +5,7 @@ class CreateShows < ActiveRecord::Migration
       t.integer :list_id
       t.string :name
       t.string :genre
+      t.string :overview
     end
   end
 end

@@ -20,10 +20,11 @@ class Show < ActiveRecord::Base
     response = self.get_api_response(url)
     response["results"].collect do |show|
       show_url = " " + "#{show["name"]}" + " " + "|" + " " + "#{show["overview"]}"
-      @filtered_show = Show.new(name: show["name"])
+      @filtered_show = Show.new(name: show["name"], overview: show["overview"])
 
       @filtered_show.save
-      @filtered_show #creates new instances of said object, but does not allow me to save to database, "save" no method error, Cannot use object ids
+      @filtered_show
+      #creates new instances of said object, but does not allow me to save to database, "save" no method error, Cannot use object ids
     #  Show.new(show_url) creates new instance objects, makes list, yet no way of indexing objects
     #  @filter.merge(show_url) type error, no conversion of string to hash
     #  @filter[:new_show] = show_url works but renders blanks

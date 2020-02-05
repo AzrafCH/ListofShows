@@ -3,7 +3,7 @@
 <h3>Here are the results of your search: </h3>
 <% @shows.collect do |show| %>
 <ol>
-   <li><input type="checkbox" name="list[show_ids][] value = params[show_id]"><%= show.name %></li>
+   <li><input type="checkbox" name="list[show_ids][] value = params[show_id]"><%= "#{show.name} | #{show.overview}" %></li>
 </ol>
   <% end %>
  <br>
