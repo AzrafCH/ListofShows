@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: ca0e6bfc48c3b80a11a68806d50342a47d4b828c
+  revision: 0f4e29d0adf207e961e1ea18562a828a8c1017fd
   specs:
-    database_cleaner (1.8.1)
+    database_cleaner (1.8.2)
 
 GEM
   remote: http://rubygems.org/
@@ -114,7 +114,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 4.2, >= 4.2.6)
+  activerecord (~> 4.2, >= 4.2.11.1)
   bcrypt
   capybara
   database_cleaner!

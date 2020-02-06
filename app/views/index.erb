@@ -3,7 +3,7 @@
 <h3>Here are the results of your search: </h3>
 <% @shows.collect do |show| %>
 <ol>
-   <li><input type="checkbox" name="list[show_ids][]" id = "<%=show.id%>" value = "<%=show.id%>"><%= " #{show.name} | #{show.overview}" %></li>
+   <li><input type="checkbox" name= "params[show_id][]" id = "<%=show.id%>" value = "<%=show.id%>"><%= " #{show.name} | #{show.overview}" %></li>
 </ol>
   <% end %>
  <br>
@@ -11,12 +11,12 @@
 <%# <% @shows.each do |show| %>
 <%#   <ol>
   <input type="checkbox" name="list[show_ids][]"><li><%= show.first%><%# </li>
-<%#   </ol>
+<%#   </ol>S
   <% end %>
 
   <h2>Create New List</h2>
-  <form action = "/new_list" method = "POST">
-    <input type = "text" name = "list[title]" placeholder="List Name"><br>
+  <form action = "/list/new" method = "POST">
+    <input type = "text" name = "params[title]" placeholder="List Name"><br>
     <input type = "submit" value = "Create List">
   </form>
 

@@ -13,10 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20200201112657) do
 
-  create_table "list", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.string  "title"
     t.string  "content"
     t.integer "user_id"
+    t.string  "shows"
   end
 
   create_table "shows", force: :cascade do |t|

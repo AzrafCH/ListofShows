@@ -4,15 +4,9 @@ require 'pry'
 
 class Show < ActiveRecord::Base
   belongs_to :user
-  belongs_to :list
+  belongs_to :lists
 
   attr_accessor :show_url, :show_id, :show_object
-
-#  @filter = []
-
-  #def initialize()
-    #self.show_url = url
-  #end
 
   def self.search_shows_by_name(name)
     name = name
@@ -24,12 +18,6 @@ class Show < ActiveRecord::Base
 
       @filtered_show.save
       @filtered_show
-      #creates new instances of said object, but does not allow me to save to database, "save" no method error, Cannot use object ids
-    #  Show.new(show_url) creates new instance objects, makes list, yet no way of indexing objects
-    #  @filter.merge(show_url) type error, no conversion of string to hash
-    #  @filter[:new_show] = show_url works but renders blanks
-    #  @filter << show_url  #works, but does not allow me to slice the array, combines all results into one value, cant call upon seperate indexes past 0 as they = nil
-    #  @filter.uniq
     end
   end
 
