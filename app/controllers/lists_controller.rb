@@ -7,10 +7,6 @@ class ListsController < ApplicationController
     erb :index
   end
 
-  get '/list/new' do
-    @show = Show.all
-    erb :'/list/new'
-  end
 
   post '/list/new' do
     @list = List.create(params[:title])
@@ -18,9 +14,9 @@ class ListsController < ApplicationController
     redirect "list/#{@list.id}"
   end
 
-  get "list/#{@list.id}" do
-    @list.find_by(params[:id])
-    erb :show
-  end
+  #get "list/#{@list.id}" do
+#    @list.find_by(params[:id])
+#    erb :show
+#  end
 
 end
