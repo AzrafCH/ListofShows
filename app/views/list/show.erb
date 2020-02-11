@@ -1,6 +1,6 @@
 <h1><%=@list.name%></h1>
 <ul>
-  <%@list.shows.each do |show|%>
-  <li><%="#{show.name} | #{show.overview}" %></li>
+  <%@list_shows.collect do |show|%>
+  <li><%= show %></li>
   <%end%>
 </ul>

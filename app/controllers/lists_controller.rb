@@ -4,14 +4,16 @@ class ListsController < ApplicationController
 
   get '/lists' do
     @lists = List.all
-    erb :index
+    erb :'/list/index'
   end
 
 
   post '/list/new' do
     @list = List.create(params[:title])
-    @list.shows << Show.create(name: params["show"]["name"], overview: params["show"]["overview"])
+    @list_shows = params[:show_id]
     redirect "list/#{@list.id}"
+
+    erb :'/list/new'
   end
 
   #get "list/#{@list.id}" do
