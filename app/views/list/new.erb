@@ -1,6 +1,4 @@
-<h1><%= @list %></h1>
+<h1><%= @list.to_s %></h1>
 <ul>
-  <%@list_shows.collect do |show|%>
-  <li><%= show %></li>
-  <%end%>
+  <li><%= @list_shows.to_s %></li>
 </ul>

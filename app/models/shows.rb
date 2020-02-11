@@ -15,7 +15,6 @@ class Show < ActiveRecord::Base
     response["results"].collect do |show|
       show_url = " " + "#{show["name"]}" + " " + "|" + " " + "#{show["overview"]}"
       @filtered_show = Show.new(name: show["name"], overview: show["overview"])
-
       @filtered_show.save
       @filtered_show
     end

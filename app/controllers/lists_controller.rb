@@ -10,9 +10,7 @@ class ListsController < ApplicationController
 
   post '/list/new' do
     @list = List.create(params[:title])
-    @list_shows = params[:show_id]
-    redirect "list/#{@list.id}"
-
+    @list_shows = Show.all
     erb :'/list/new'
   end
 
